@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.app')
 @section('title',$event['title'])
 @section('styles')
 <link rel="stylesheet" href="../css/reset.css">
