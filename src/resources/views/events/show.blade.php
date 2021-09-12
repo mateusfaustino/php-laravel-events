@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="../css/show/navbar.css">
 <link rel="stylesheet" href="../css/show/show.css">
 <link rel="stylesheet" href="../css/globals.css">
-<link rel="stylesheet" href="../css/fw/css/all.css" >
+<link rel="stylesheet" href="/fontawesome/css/all.css" >
 @endsection
 @section('content')
 <section class='event_section'>
