@@ -1,0 +1,14 @@
+.navbar,
+#Home,
+.navbar .navbar_menu,
+#search-container,.section_create,
+.event_section
+{
+    padding-left:16px;
+    padding-right: 16px;
+}
+.event-card_title, .event-card_description,
+ .event-card_see-more,.event-card_city{
+    margin-left:8px;
+    margin-right: 8px;
+}
