@@ -1,46 +1,40 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-
-        <title>{{ config('app.name', 'Laravel') }}</title>
-
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-
-        @livewireStyles
-
-        <!-- Scripts -->
-        <script src="{{ mix('js/app.js') }}" defer></script>
-    </head>
-    <body class="font-sans antialiased">
-        <x-jet-banner />
-
-        <div class="min-h-screen bg-gray-100">
-            @livewire('navigation-menu')
-
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
-
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/fw/css/all.css">
+    
+    @yield('styles')
+    <title>@yield('title')</title>
+</head>
+<body>
+<div class='navbar'>
+        <div class="navbar_logo">
+            <a href="/">
+                logo
+            </a>    
         </div>
-
-        @stack('modals')
-
-        @livewireScripts
-    </body>
+        <ul class="navbar_menu">
+            <li class="menu_item"><a href='/events'>eventos</a></li>
+            <li class="menu_item"><a href='/events/create'>criar evento</a></li>
+            <li class="menu_item"><a href='/login'>entrar</a></li>
+            <li class="menu_item"><a href='/signup'>cadastrar</a></li>
+        </ul>
+        <div class='navbar_btn'>
+            <div class="navbar_btn_row row1"></div>
+            <div class="navbar_btn_row row2"></div>
+            <div class="navbar_btn_row row3"></div>
+        </div>
+    </div>
+    <script>
+        const navbarBtn = document.querySelector(".navbar_btn");
+        const navbar = document.querySelector(".navbar");
+        navbarBtn.addEventListener("click",()=>{
+            navbar.classList.toggle("navbar--open");
+        })
+    </script>
+    @yield('content')
+</body>
 </html>
