@@ -48,7 +48,7 @@ class EventController extends Controller
         
         if($request->hasFile('image') && $request->file('image')->isValid()){
             $requestImage = $request->image;
-            $path = $requestImage->store("/public/events");
+            $path = $requestImage->store("events",'public');
             $event->image = $path;
         }
 
